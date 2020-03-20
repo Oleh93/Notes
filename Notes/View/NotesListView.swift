@@ -8,27 +8,6 @@
 
 import SwiftUI
 
-class Note: Identifiable {
-    let id = UUID()
-    let title: String
-    let text: String
-    let isFavorite: Bool
-    var isDeleted: Bool
-    
-    init(title: String, text: String, isFavorite: Bool, isDeleted: Bool) {
-        self.title = title
-        self.text = text
-        self.isFavorite = isFavorite
-        self.isDeleted = isDeleted
-    }
-}
-
-enum NoteState {
-    case all
-    case favourite
-    case deleted
-}
-    
 class NoteManager: ObservableObject {
     @Published var notes: [Note] = [
         Note(title: "Title 1", text: "Text 1", isFavorite: true, isDeleted: false),
@@ -58,7 +37,7 @@ class NoteManager: ObservableObject {
         note.isDeleted = true
     }
     
-    func getFiltered(by state: NoteState) -> [Note] {
+    func filtered(by state: NoteState) -> [Note] {
         var filteredNotes: [Note] = []
 
         switch state {
@@ -89,7 +68,7 @@ struct NoteRowView: View {
             Text(note.text)
             
             Spacer()
-            
+
             if note.isFavorite {
                 Image(systemName: "star.fill")
             }
@@ -103,7 +82,7 @@ struct AddNewNoteView: View {
     @State var title        = ""
     @State var isFavorite   = false
     @State var text         = ""
-    @State var isDeleted   = false
+    @State var isDeleted    = false
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -125,14 +104,14 @@ struct AddNewNoteView: View {
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Done")
-                        .foregroundColor(Color.green)
                 }
                 .disabled(title.isEmpty && text.isEmpty)
             }
             
             TextField("Enter title here", text: $title)
             Toggle(isOn: $isFavorite) { Text("Favorite") }
-            TextField("Enter text here", text: $text)
+//            TextField("Enter text here", text: $text)
+            TextView(text: $text)
         }
         .padding()
     }
@@ -145,7 +124,8 @@ struct NotesListView: View {
     @State private var selectorIndex = 0
     @State private var statesStr = ["All", "Favourites", "Deleted"]
     @State private var states = [NoteState.all, NoteState.favourite, NoteState.deleted]
-
+    @State var isPresentedActionSheet = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -161,7 +141,7 @@ struct NotesListView: View {
                 }
                 
                 List {
-                    ForEach(noteManager.getFiltered(by: states[selectorIndex])) { note in
+                    ForEach(noteManager.filtered(by: states[selectorIndex])) { note in
                         NoteRowView(note: note)
                     }
                     .onMove(perform: move(from:to:))
@@ -195,7 +175,8 @@ struct NotesListView: View {
     
     func delete(for offset: IndexSet) {
         let fromDeleted = true ? selectorIndex == 2: false
-        let notesToDelete = noteManager.getFiltered(by: states[selectorIndex])
+
+        let notesToDelete = noteManager.filtered(by: states[selectorIndex])
         
         for i in offset {
             if fromDeleted {
