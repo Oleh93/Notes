@@ -20,11 +20,13 @@ class Note: Identifiable {
     let text: String
     let isFavorite: Bool
     var isDeleted: Bool
+    let creationDate: String
     
     init(title: String, text: String, isFavorite: Bool, isDeleted: Bool) {
         self.title = title
         self.text = text
         self.isFavorite = isFavorite
         self.isDeleted = isDeleted
+        self.creationDate = Date.currentDate()
     }
 }

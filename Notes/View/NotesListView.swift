@@ -59,19 +59,28 @@ struct NoteRowView: View {
     let note: Note
     
     var body: some View {
-        HStack {
-            Text(note.title)
-            
-            Spacer()
-                .frame(width: 50.0)
-            
-            Text(note.text)
-            
-            Spacer()
+        VStack {
+            HStack {
+                Text(note.title)
+                
+                Spacer()
+                    .frame(width: 50.0)
+                
+                Text(note.text)
+                
+                Spacer()
 
-            if note.isFavorite {
-                Image(systemName: "star.fill")
+                if note.isFavorite {
+                    Image(systemName: "star.fill")
+                }
             }
+            
+            Spacer()
+            
+            Text(note.creationDate)
+                .fontWeight(.light)
+                .font(.footnote)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
@@ -120,11 +129,11 @@ struct AddNewNoteView: View {
 struct NotesListView: View {
     @ObservedObject var noteManager: NoteManager
     @State private var shouldShowSheet = false
-    
+    @State var isPresentedActionSheet  = false
+
     @State private var selectorIndex = 0
-    @State private var statesStr = ["All", "Favourites", "Deleted"]
-    @State private var states = [NoteState.all, NoteState.favourite, NoteState.deleted]
-    @State var isPresentedActionSheet = false
+    @State private var statesStr     = ["All", "Favourites", "Deleted"]
+    @State private var states        = [NoteState.all, NoteState.favourite, NoteState.deleted]
     
     var body: some View {
         NavigationView {
