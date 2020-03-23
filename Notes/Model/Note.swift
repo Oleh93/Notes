@@ -16,8 +16,8 @@ public enum NoteState {
 
 class Note: Identifiable {
     let id = UUID()
-    let title: String
-    let text: String
+    var title: String
+    var text: String
     let isFavorite: Bool
     var isDeleted: Bool
     let creationDate: String

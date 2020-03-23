@@ -3,22 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0386BA6D17A4CB72650CA29A /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C28167E9E9E508C9566670 /* Pods_Notes.framework */; };
+		6A2EF43C2426A13800CBBD75 /* FacebookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2EF43B2426A13800CBBD75 /* FacebookLoginButton.swift */; };
 		6A3A77CB2421923100722E02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A77CA2421923100722E02 /* AppDelegate.swift */; };
 		6A3A77CD2421923100722E02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A77CC2421923100722E02 /* SceneDelegate.swift */; };
 		6A3A77D12421923300722E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A77D02421923300722E02 /* Assets.xcassets */; };
 		6A3A77D42421923400722E02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A77D32421923400722E02 /* Preview Assets.xcassets */; };
 		6A3A77D72421923400722E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A77D52421923400722E02 /* LaunchScreen.storyboard */; };
 		6A3A77E0242192CA00722E02 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A77DF242192CA00722E02 /* NotesListView.swift */; };
+		6A61E8272426A72800C9A521 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A61E8262426A72800C9A521 /* GoogleService-Info.plist */; };
 		6A7A5DF62424D9430094AC15 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A5DF52424D9430094AC15 /* Note.swift */; };
 		6A7A5DF82424E9B10094AC15 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A5DF72424E9B10094AC15 /* TextView.swift */; };
 		6A7A5DFB2425068C0094AC15 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A5DFA2425068C0094AC15 /* Date+Extension.swift */; };
+		6AC0928824279F8F00FCA811 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0928724279F8F00FCA811 /* NoteManager.swift */; };
+		6AC0928C2427A08C00FCA811 /* SingleNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0928B2427A08C00FCA811 /* SingleNoteView.swift */; };
+		6AC0928E242817E600FCA811 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0928D242817E600FCA811 /* AuthView.swift */; };
+		6AC0929224281B2600FCA811 /* AddNewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0929124281B2600FCA811 /* AddNewNoteView.swift */; };
+		6AC092942428BC9600FCA811 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC092932428BC9600FCA811 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A2EF43B2426A13800CBBD75 /* FacebookLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginButton.swift; sourceTree = "<group>"; };
 		6A3A77C72421923100722E02 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3A77CA2421923100722E02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A3A77CC2421923100722E02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,9 +36,18 @@
 		6A3A77D62421923400722E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A3A77D82421923400722E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A3A77DF242192CA00722E02 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
+		6A61E8262426A72800C9A521 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A7A5DF52424D9430094AC15 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		6A7A5DF72424E9B10094AC15 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		6A7A5DFA2425068C0094AC15 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		6AC0928724279F8F00FCA811 /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		6AC0928B2427A08C00FCA811 /* SingleNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNoteView.swift; sourceTree = "<group>"; };
+		6AC0928D242817E600FCA811 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		6AC0929124281B2600FCA811 /* AddNewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteView.swift; sourceTree = "<group>"; };
+		6AC092932428BC9600FCA811 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		75C28167E9E9E508C9566670 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ACF9155B9060C50B1A1C4D0 /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
+		B8AEBA15B523CA82F0898458 /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +55,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0386BA6D17A4CB72650CA29A /* Pods_Notes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B4D152BE5610F218ADB005B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75C28167E9E9E508C9566670 /* Pods_Notes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6A3A77BE2421923100722E02 = {
 			isa = PBXGroup;
 			children = (
 				6A3A77C92421923100722E02 /* Notes */,
 				6A3A77C82421923100722E02 /* Products */,
+				B79CC762BF17433832B2DDB5 /* Pods */,
+				3B4D152BE5610F218ADB005B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,14 +91,14 @@
 		6A3A77C92421923100722E02 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				6AC0928724279F8F00FCA811 /* NoteManager.swift */,
+				6AC092932428BC9600FCA811 /* Logger.swift */,
 				6A7A5DF92425067A0094AC15 /* Extensions */,
 				6A7A5DF42424D9350094AC15 /* Model */,
 				6A3A77DE242192A200722E02 /* View */,
-				6A3A77CA2421923100722E02 /* AppDelegate.swift */,
-				6A3A77CC2421923100722E02 /* SceneDelegate.swift */,
-				6A3A77D02421923300722E02 /* Assets.xcassets */,
 				6A3A77D52421923400722E02 /* LaunchScreen.storyboard */,
-				6A3A77D82421923400722E02 /* Info.plist */,
+				6AC0928A24279FC000FCA811 /* Resources */,
+				6A61E8282426A73B00C9A521 /* SupportingFiles */,
 				6A3A77D22421923400722E02 /* Preview Content */,
 			);
 			path = Notes;
@@ -86,10 +115,22 @@
 		6A3A77DE242192A200722E02 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6A3A77DF242192CA00722E02 /* NotesListView.swift */,
+				6AC0929024281B0C00FCA811 /* Notes */,
+				6AC0928F24281B0000FCA811 /* Auth */,
 				6A7A5DF72424E9B10094AC15 /* TextView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6A61E8282426A73B00C9A521 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6A3A77D82421923400722E02 /* Info.plist */,
+				6A61E8262426A72800C9A521 /* GoogleService-Info.plist */,
+				6A3A77CA2421923100722E02 /* AppDelegate.swift */,
+				6A3A77CC2421923100722E02 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		6A7A5DF42424D9350094AC15 /* Model */ = {
@@ -108,6 +149,42 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		6AC0928A24279FC000FCA811 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6A3A77D02421923300722E02 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6AC0928F24281B0000FCA811 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				6A2EF43B2426A13800CBBD75 /* FacebookLoginButton.swift */,
+				6AC0928D242817E600FCA811 /* AuthView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		6AC0929024281B0C00FCA811 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				6AC0928B2427A08C00FCA811 /* SingleNoteView.swift */,
+				6A3A77DF242192CA00722E02 /* NotesListView.swift */,
+				6AC0929124281B2600FCA811 /* AddNewNoteView.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		B79CC762BF17433832B2DDB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9ACF9155B9060C50B1A1C4D0 /* Pods-Notes.debug.xcconfig */,
+				B8AEBA15B523CA82F0898458 /* Pods-Notes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A3A77DB2421923400722E02 /* Build configuration list for PBXNativeTarget "Notes" */;
 			buildPhases = (
+				7FD47BED3F56A2A075192E08 /* [CP] Check Pods Manifest.lock */,
 				6A3A77C32421923100722E02 /* Sources */,
 				6A3A77C42421923100722E02 /* Frameworks */,
 				6A3A77C52421923100722E02 /* Resources */,
+				FC2853601FA1BED0511F0C9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,12 +246,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A3A77D72421923400722E02 /* LaunchScreen.storyboard in Resources */,
+				6A61E8272426A72800C9A521 /* GoogleService-Info.plist in Resources */,
 				6A3A77D42421923400722E02 /* Preview Assets.xcassets in Resources */,
 				6A3A77D12421923300722E02 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7FD47BED3F56A2A075192E08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Notes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC2853601FA1BED0511F0C9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notes/Pods-Notes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notes/Pods-Notes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notes/Pods-Notes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6A3A77C32421923100722E02 /* Sources */ = {
@@ -182,7 +304,13 @@
 				6A3A77CB2421923100722E02 /* AppDelegate.swift in Sources */,
 				6A3A77E0242192CA00722E02 /* NotesListView.swift in Sources */,
 				6A3A77CD2421923100722E02 /* SceneDelegate.swift in Sources */,
+				6AC0928C2427A08C00FCA811 /* SingleNoteView.swift in Sources */,
 				6A7A5DF62424D9430094AC15 /* Note.swift in Sources */,
+				6A2EF43C2426A13800CBBD75 /* FacebookLoginButton.swift in Sources */,
+				6AC0928E242817E600FCA811 /* AuthView.swift in Sources */,
+				6AC092942428BC9600FCA811 /* Logger.swift in Sources */,
+				6AC0929224281B2600FCA811 /* AddNewNoteView.swift in Sources */,
+				6AC0928824279F8F00FCA811 /* NoteManager.swift in Sources */,
 				6A7A5DF82424E9B10094AC15 /* TextView.swift in Sources */,
 				6A7A5DFB2425068C0094AC15 /* Date+Extension.swift in Sources */,
 			);
@@ -318,13 +446,14 @@
 		};
 		6A3A77DC2421923400722E02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ACF9155B9060C50B1A1C4D0 /* Pods-Notes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Notes/Preview Content\"";
 				DEVELOPMENT_TEAM = JP25AC25GZ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = Notes/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -338,13 +467,14 @@
 		};
 		6A3A77DD2421923400722E02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8AEBA15B523CA82F0898458 /* Pods-Notes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Notes/Preview Content\"";
 				DEVELOPMENT_TEAM = JP25AC25GZ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = Notes/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
