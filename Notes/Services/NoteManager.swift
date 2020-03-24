@@ -51,7 +51,7 @@ class NoteManager: ObservableObject {
         case .deleted:
             filteredNotes = deletedNotes
         }
-        
+
         return filteredNotes
     }
 }

@@ -20,6 +20,7 @@ struct NoteRowView: View {
                     .frame(width: 50.0)
                 
                 Text(note.text)
+                    .lineLimit(1)
                 
                 Spacer()
 
@@ -39,11 +40,11 @@ struct NoteRowView: View {
 }
 
 struct NotesListView: View {
-    @State var loginStatus = Logger.shared.loginStatus
-    
     @ObservedObject var noteManager: NoteManager
-    @State private var shouldShowSheet = false
-    @State var isPresentedActionSheet  = false
+    
+    @State var loginStatus = Logger.shared.loginStatus
+    @State private var shouldShowProfileView = false
+    @State private var shouldShowSheet       = false
 
     @State private var selectorIndex = 0
     @State private var statesStr     = ["All", "Favourites", "Deleted"]
@@ -77,21 +78,36 @@ struct NotesListView: View {
                         }
                         .navigationBarItems(
                             leading: HStack {
-                                        Button(
-                                            action: {
-                                                self.shouldShowSheet.toggle()
-                                            },
-                                            label: {
-                                                Image(systemName: "plus.circle")
-                                            }
-                                        )
-                                            .sheet(isPresented: $shouldShowSheet) {
-                                                AddNewNoteView(noteManager: self.noteManager)
-                                        }
-                                        },
-                            trailing: HStack { EditButton() }
-                        )
+                                Button(
+                                    action: {
+                                        self.shouldShowProfileView.toggle()
+                                    },
+                                    label: {
+                                        Image(systemName: "person.crop.circle")
+                                    }
+                                )
+                                .sheet(isPresented: $shouldShowProfileView) {
+                                    ProfileView()
+                                }
+                            },
+                            trailing: HStack {
+                                Button(
+                                    action: {
+                                        self.shouldShowSheet.toggle()
+                                    },
+                                    label: {
+                                        Image(systemName: "plus.circle")
+                                    }
+                                )
+                                .sheet(isPresented: $shouldShowSheet) {
+                                        AddNewNoteView(noteManager: self.noteManager)
+                                }
+                                
+                                Spacer(minLength: 15)
+                                EditButton()
+                            }
                         
+                        )
                         .navigationBarTitle("Notes")
                     }
                     .padding()

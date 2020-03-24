@@ -43,7 +43,6 @@ struct AddNewNoteView: View {
             
             TextField("Enter title here", text: $title)
             Toggle(isOn: $isFavorite) { Text("Favorite") }
-//            TextField("Enter text here", text: $text)
             TextView(text: $text)
         }
         .padding()

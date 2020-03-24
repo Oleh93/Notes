@@ -15,6 +15,7 @@
 		6A3A77D42421923400722E02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A77D32421923400722E02 /* Preview Assets.xcassets */; };
 		6A3A77D72421923400722E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A77D52421923400722E02 /* LaunchScreen.storyboard */; };
 		6A3A77E0242192CA00722E02 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A77DF242192CA00722E02 /* NotesListView.swift */; };
+		6A5D65692429617E0010E3CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D65682429617E0010E3CB /* User.swift */; };
 		6A61E8272426A72800C9A521 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A61E8262426A72800C9A521 /* GoogleService-Info.plist */; };
 		6A7A5DF62424D9430094AC15 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A5DF52424D9430094AC15 /* Note.swift */; };
 		6A7A5DF82424E9B10094AC15 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A5DF72424E9B10094AC15 /* TextView.swift */; };
@@ -24,6 +25,7 @@
 		6AC0928E242817E600FCA811 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0928D242817E600FCA811 /* AuthView.swift */; };
 		6AC0929224281B2600FCA811 /* AddNewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0929124281B2600FCA811 /* AddNewNoteView.swift */; };
 		6AC092942428BC9600FCA811 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC092932428BC9600FCA811 /* Logger.swift */; };
+		6ADE218B24296F0E00177978 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE218A24296F0E00177978 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,7 @@
 		6A3A77D62421923400722E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A3A77D82421923400722E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A3A77DF242192CA00722E02 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
+		6A5D65682429617E0010E3CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6A61E8262426A72800C9A521 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A7A5DF52424D9430094AC15 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		6A7A5DF72424E9B10094AC15 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		6AC0928D242817E600FCA811 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		6AC0929124281B2600FCA811 /* AddNewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteView.swift; sourceTree = "<group>"; };
 		6AC092932428BC9600FCA811 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		6ADE218A24296F0E00177978 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		75C28167E9E9E508C9566670 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACF9155B9060C50B1A1C4D0 /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		B8AEBA15B523CA82F0898458 /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,12 +95,10 @@
 		6A3A77C92421923100722E02 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				6AC0928724279F8F00FCA811 /* NoteManager.swift */,
-				6AC092932428BC9600FCA811 /* Logger.swift */,
+				6A5D6567242948A00010E3CB /* Services */,
 				6A7A5DF92425067A0094AC15 /* Extensions */,
 				6A7A5DF42424D9350094AC15 /* Model */,
 				6A3A77DE242192A200722E02 /* View */,
-				6A3A77D52421923400722E02 /* LaunchScreen.storyboard */,
 				6AC0928A24279FC000FCA811 /* Resources */,
 				6A61E8282426A73B00C9A521 /* SupportingFiles */,
 				6A3A77D22421923400722E02 /* Preview Content */,
@@ -122,9 +124,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6A5D6567242948A00010E3CB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6AC092932428BC9600FCA811 /* Logger.swift */,
+				6AC0928724279F8F00FCA811 /* NoteManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		6A61E8282426A73B00C9A521 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				6A3A77D52421923400722E02 /* LaunchScreen.storyboard */,
 				6A3A77D82421923400722E02 /* Info.plist */,
 				6A61E8262426A72800C9A521 /* GoogleService-Info.plist */,
 				6A3A77CA2421923100722E02 /* AppDelegate.swift */,
@@ -137,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				6A7A5DF52424D9430094AC15 /* Note.swift */,
+				6A5D65682429617E0010E3CB /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +185,7 @@
 				6AC0928B2427A08C00FCA811 /* SingleNoteView.swift */,
 				6A3A77DF242192CA00722E02 /* NotesListView.swift */,
 				6AC0929124281B2600FCA811 /* AddNewNoteView.swift */,
+				6ADE218A24296F0E00177978 /* ProfileView.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -301,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A5D65692429617E0010E3CB /* User.swift in Sources */,
 				6A3A77CB2421923100722E02 /* AppDelegate.swift in Sources */,
 				6A3A77E0242192CA00722E02 /* NotesListView.swift in Sources */,
 				6A3A77CD2421923100722E02 /* SceneDelegate.swift in Sources */,
@@ -312,6 +327,7 @@
 				6AC0929224281B2600FCA811 /* AddNewNoteView.swift in Sources */,
 				6AC0928824279F8F00FCA811 /* NoteManager.swift in Sources */,
 				6A7A5DF82424E9B10094AC15 /* TextView.swift in Sources */,
+				6ADE218B24296F0E00177978 /* ProfileView.swift in Sources */,
 				6A7A5DFB2425068C0094AC15 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

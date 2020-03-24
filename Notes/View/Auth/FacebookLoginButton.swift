@@ -18,11 +18,12 @@ struct FacebookLoginButton: UIViewRepresentable {
     
     class Coordinator: NSObject, LoginButtonDelegate {
         func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+            
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            
+
             guard let token = AccessToken.current else {return}
             let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
             
@@ -31,6 +32,7 @@ struct FacebookLoginButton: UIViewRepresentable {
                     print(error.localizedDescription)
                     return
                 }
+    
                 print("Facebook Signed In")
                 Logger.shared.loginStatus = true
                 NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
@@ -38,15 +40,19 @@ struct FacebookLoginButton: UIViewRepresentable {
         }
         
         func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-            try! Auth.auth().signOut()
-            Logger.shared.loginStatus = false
-            NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+            do {
+                try Auth.auth().signOut()
+                Logger.shared.loginStatus = false
+                NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+            } catch(let error){
+                print(error)
+            }
         }
     }
     
     func makeUIView(context: UIViewRepresentableContext<FacebookLoginButton>) -> FBLoginButton {
         let view = FBLoginButton()
-        //        view.permissions = ["email"]
+        view.permissions = ["email"]
         view.delegate = context.coordinator
         return view
     }
