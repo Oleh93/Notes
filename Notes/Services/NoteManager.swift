@@ -29,7 +29,8 @@ class NoteManager: ObservableObject {
         }
         else {
             for index in offset {
-                let note = notes.remove(at: index)
+                var note = notes.remove(at: index)
+                note.isDeleted = true
                 deletedNotes.append(note)
             }
         }
@@ -59,6 +60,9 @@ class NoteManager: ObservableObject {
                 note.id == old.id
             }) else { return }
             deletedNotes[index] = new
+            print(old)
+            print(index)
+            print(deletedNotes)
         }
         else if !old.isDeleted {
             guard let index = notes.firstIndex(where: { (note) -> Bool in
