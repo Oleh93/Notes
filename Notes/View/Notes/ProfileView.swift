@@ -16,6 +16,7 @@ struct ProfileView: View {
     @State var userName: String = Logger.shared.getUser()?.displayName ?? ""
     @State var email: String = Logger.shared.getUser()?.email ?? ""
     @State var phoneNumber: String = Logger.shared.getUser()?.phoneNumber ?? ""
+    var photoURL = Logger.shared.getUser()?.photoURL
     
     @Environment(\.presentationMode) var presentationMode
 
@@ -75,7 +76,7 @@ struct ProfileView: View {
     }
     
     func createImageView() -> AnyView {
-        if let url = Auth.auth().currentUser?.photoURL {
+        if let url = photoURL {
             return AnyView(WebImage(url: URL(string: url.absoluteString), options: [.progressiveLoad])
                 .resizable()
                 .indicator(.progress)

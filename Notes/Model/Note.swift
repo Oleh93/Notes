@@ -14,13 +14,13 @@ public enum NoteState {
     case deleted
 }
 
-class Note: Identifiable {
+struct Note: Identifiable {
     let id = UUID()
     var title: String
     var text: String
-    let isFavorite: Bool
+    var isFavorite: Bool
     var isDeleted: Bool
-    let creationDate: String
+    var creationDate: String
     
     init(title: String, text: String, isFavorite: Bool, isDeleted: Bool) {
         self.title = title

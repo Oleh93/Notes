@@ -32,7 +32,7 @@ struct AddNewNoteView: View {
                         isDeleted: self.isDeleted
                     )
                     
-                    self.noteManager.notes.append(note)
+                    self.noteManager.add(note: note)
                     
                     self.presentationMode.wrappedValue.dismiss()
                 }) {

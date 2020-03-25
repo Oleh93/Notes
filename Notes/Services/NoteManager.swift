@@ -15,27 +15,24 @@ class NoteManager: ObservableObject {
         Note(title: "Title 2", text: "Text 2", isFavorite: false, isDeleted: false),
         Note(title: "Title 3", text: "Text 3", isFavorite: true, isDeleted: false)
     ]
-    
+
     @Published var deletedNotes: [Note] = []
-    
-    func delete(note: Note) {
-        guard let index = notes.firstIndex(where: { (temp) -> Bool in
-            temp === note
-        }) else { return }
-        
-        deletedNotes.append(note)
-        notes.remove(at: index)
-        note.isDeleted = true
-        print(notes)
-    }
-    
-    func deleteFromDeleted(note: Note) {
-        guard let index = deletedNotes.firstIndex(where: { (temp) -> Bool in
-            temp === note
-        }) else { return }
-        
-        deletedNotes.remove(at: index)
-        note.isDeleted = true
+    @Published var favoriteNotes: [Note] = []
+
+    func add(note: Note) { notes.append(note) }
+
+    func delete(at offset: IndexSet, force: Bool) {
+        if force {
+            for index in offset {
+                deletedNotes.remove(at: index)
+            }
+        }
+        else {
+            for index in offset {
+                let note = notes.remove(at: index)
+                deletedNotes.append(note)
+            }
+        }
     }
     
     func filtered(by state: NoteState) -> [Note] {
@@ -48,10 +45,26 @@ class NoteManager: ObservableObject {
             filteredNotes = notes.filter({ (note) -> Bool in
                 note.isFavorite && !note.isDeleted
             })
+//            filteredNotes = favoriteNotes
         case .deleted:
             filteredNotes = deletedNotes
         }
 
         return filteredNotes
+    }
+    
+    func change(old: Note, new: Note) {
+        if old.isDeleted {
+            guard let index = deletedNotes.firstIndex(where: { (note) -> Bool in
+                note.id == old.id
+            }) else { return }
+            deletedNotes[index] = new
+        }
+        else if !old.isDeleted {
+            guard let index = notes.firstIndex(where: { (note) -> Bool in
+                note.id == old.id
+            }) else { return }
+            notes[index] = new
+        }
     }
 }

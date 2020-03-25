@@ -9,10 +9,42 @@
 import Foundation
 import SwiftUI
 
-struct SingledNoteView: View {
-    var note: Note
+struct SingleNoteView: View {
+    var noteManager: NoteManager
+    
+    @State var note: Note
+
+    @Environment(\.presentationMode) var presentationMode
+
+    @State var text: String = ""
+    @State var title: String = ""
+    @State var isFavorite: Bool = false
+    @State var isDeleted: Bool = false
     
     var body: some View {
-        Text("SingleNoteView")
+        NavigationView {
+            VStack {
+                TextField("Enter title here", text: $title)
+                Toggle(isOn: $isFavorite) { Text("Favorite").foregroundColor(.gray) }
+                TextView(text: $text)
+            }.onAppear {
+                self.title = self.note.title
+                self.text = self.note.text
+                self.isFavorite = self.note.isFavorite
+                self.isDeleted = self.note.isDeleted
+            }
+            
+        }
+        .navigationBarTitle("Note")
+        .onDisappear {
+            print("Back clicked")
+            self.note.text = self.text
+            self.note.title = self.title
+            self.note.isFavorite = self.isFavorite
+            self.note.isDeleted = self.isDeleted
+            
+            self.noteManager.change(old: self.note, new: Note(title: self.title, text: self.text, isFavorite: self.isFavorite, isDeleted: self.isDeleted))
+            self.presentationMode.wrappedValue.dismiss()
+        }
     }
 }
