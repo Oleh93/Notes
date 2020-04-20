@@ -11,9 +11,44 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 import Firebase
+struct DropDown: View {
+    @State var expand = false
+    var noteManager: NoteManager
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Notes info")
+                Image(systemName: expand ? "chevron.up": "chevron.down")
+                    .resizable().frame(width: 13, height: 6)
+            }
+            .onTapGesture {
+                self.expand.toggle()
+            }
+            
+            if expand {
+                Button(action: {
+                    
+                }) {
+                    VStack(alignment: .leading) {
+                        Text("Total: \(noteManager.filtered(by: .deleted).count + noteManager.filtered(by: .all).count)")
+                        Text("Deleted: \(noteManager.filtered(by: .deleted).count)")
+                        Text("Favorite: \(noteManager.filtered(by: .favourite).count)")
+                    }
+                    .foregroundColor(.black)
+                }
+            }
+        }
+    .padding()
+    .cornerRadius(20)
+    .animation(.spring())
+    }
+}
 
 struct ProfileView: View {
-    @State var userName: String = Logger.shared.getUser()?.displayName ?? ""
+    var noteManager: NoteManager
+    
+    @State var displayName: String = Logger.shared.getUser()?.displayName ?? ""
     @State var email: String = Logger.shared.getUser()?.email ?? ""
     @State var phoneNumber: String = Logger.shared.getUser()?.phoneNumber ?? ""
     var photoURL = Logger.shared.getUser()?.photoURL
@@ -28,8 +63,20 @@ struct ProfileView: View {
                         }) {
                             Text("Cancel")
                         }
+                            .padding()
                         
                         Spacer()
+                        
+                        Button(action: {
+                            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                            changeRequest?.displayName = self.displayName
+                            changeRequest?.commitChanges { (error) in
+                            }
+                            self.presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Text("Save")
+                        }
+                            .padding()
                     }
 
                     createImageView()
@@ -39,7 +86,7 @@ struct ProfileView: View {
                         .overlay(Circle().stroke(Color.white, lineWidth: 2))
                         .shadow(radius: 10)
 
-                    TextField("Enter user name here", text: $userName)
+                    TextField("Enter user name here", text: $displayName)
                         .font(.title)
                         .multilineTextAlignment(.center)
                 
@@ -54,11 +101,12 @@ struct ProfileView: View {
                     TextField("Enter email here", text: $email)
                         .font(.subheadline)
                         .multilineTextAlignment(.leading)
-                    
-                    TextField("Enter phone number here", text: $phoneNumber)
-                        .font(.subheadline)
-                        .multilineTextAlignment(.leading)
                         
+
+                    DropDown(noteManager: noteManager)
+
+                    Spacer()
+
                     Button(action: {
                         Logger.shared.logOut { (error) in
                             if let error = error {

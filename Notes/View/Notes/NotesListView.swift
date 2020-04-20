@@ -87,7 +87,7 @@ struct NotesListView: View {
                                     }
                                 )
                                 .sheet(isPresented: $shouldShowProfileView) {
-                                    ProfileView()
+                                    ProfileView(noteManager: self.noteManager)
                                 }
                             },
                             trailing: HStack {
