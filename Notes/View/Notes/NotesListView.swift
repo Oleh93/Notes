@@ -42,7 +42,7 @@ struct NoteRowView: View {
 struct NotesListView: View {
     @ObservedObject var noteManager: NoteManager
     
-    @State var loginStatus = Logger.shared.loginStatus
+    @State var loginStatus = UserManager.shared.loginStatus
     @State private var shouldShowProfileView    = false
     @State private var shouldShowAddNewNoteView = false
 
@@ -116,13 +116,13 @@ struct NotesListView: View {
         }
         .onAppear {
             NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
-                self.loginStatus = Logger.shared.loginStatus
+                self.loginStatus = UserManager.shared.loginStatus
             }
         }
     }
 
     func delete(for offset: IndexSet) {
-        let force = true ? selectorIndex == 2: false
+        let force = (selectorIndex == 2) ? true: false
         noteManager.delete(at: offset, force: force)
     }
 

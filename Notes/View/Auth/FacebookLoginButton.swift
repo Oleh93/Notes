@@ -34,7 +34,7 @@ struct FacebookLoginButton: UIViewRepresentable {
                 }
     
                 print("Facebook Signed In")
-                Logger.shared.loginStatus = true
+                UserManager.shared.loginStatus = true
                 NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
             }
         }
@@ -42,7 +42,7 @@ struct FacebookLoginButton: UIViewRepresentable {
         func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
             do {
                 try Auth.auth().signOut()
-                Logger.shared.loginStatus = false
+                UserManager.shared.loginStatus = false
                 NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
             } catch(let error){
                 print(error)

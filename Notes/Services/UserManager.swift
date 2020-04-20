@@ -9,15 +9,21 @@
 import Foundation
 import Firebase
 
-final class Logger {
-    static let shared = Logger()
+final class UserManager {
+    static let shared = UserManager()
 
     private let userDefaults = UserDefaults.standard
     private let loginStatusKey = "loginStatus.Key"
-    
+    private var profileImageDataKey = "profileImageData.Key"
+
     var loginStatus: Bool {
         get {userDefaults.bool(forKey: loginStatusKey)}
         set {userDefaults.set(newValue, forKey: loginStatusKey)}
+    }
+    
+    var profileImageData: Data? {
+        get {userDefaults.data(forKey: profileImageDataKey)}
+        set {userDefaults.set(newValue, forKey: profileImageDataKey)}
     }
     
     func getUser() -> User? {
@@ -33,7 +39,8 @@ final class Logger {
     func logOut(completion: (Error?) -> ()) {
         do {
             try Auth.auth().signOut()
-            Logger.shared.loginStatus = true
+            UserManager.shared.loginStatus = false
+            profileImageData = nil
             completion(nil)
         } catch(let error) {
             completion(error)

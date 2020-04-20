@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0386BA6D17A4CB72650CA29A /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C28167E9E9E508C9566670 /* Pods_Notes.framework */; };
+		6A1B8B95244DE57D00342FD2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B8B94244DE57D00342FD2 /* ImagePicker.swift */; };
 		6A2EF43C2426A13800CBBD75 /* FacebookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2EF43B2426A13800CBBD75 /* FacebookLoginButton.swift */; };
 		6A31AAD0244B23B300BDB6A9 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A31AACE244B23B300BDB6A9 /* Notes.xcdatamodeld */; };
 		6A3A77CB2421923100722E02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A77CA2421923100722E02 /* AppDelegate.swift */; };
@@ -25,11 +26,12 @@
 		6AC0928C2427A08C00FCA811 /* SingleNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0928B2427A08C00FCA811 /* SingleNoteView.swift */; };
 		6AC0928E242817E600FCA811 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0928D242817E600FCA811 /* AuthView.swift */; };
 		6AC0929224281B2600FCA811 /* AddNewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0929124281B2600FCA811 /* AddNewNoteView.swift */; };
-		6AC092942428BC9600FCA811 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC092932428BC9600FCA811 /* Logger.swift */; };
+		6AC092942428BC9600FCA811 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC092932428BC9600FCA811 /* UserManager.swift */; };
 		6ADE218B24296F0E00177978 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE218A24296F0E00177978 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A1B8B94244DE57D00342FD2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6A2EF43B2426A13800CBBD75 /* FacebookLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginButton.swift; sourceTree = "<group>"; };
 		6A31AACF244B23B300BDB6A9 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		6A3A77C72421923100722E02 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,7 +51,7 @@
 		6AC0928B2427A08C00FCA811 /* SingleNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNoteView.swift; sourceTree = "<group>"; };
 		6AC0928D242817E600FCA811 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		6AC0929124281B2600FCA811 /* AddNewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteView.swift; sourceTree = "<group>"; };
-		6AC092932428BC9600FCA811 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		6AC092932428BC9600FCA811 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		6ADE218A24296F0E00177978 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		75C28167E9E9E508C9566670 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACF9155B9060C50B1A1C4D0 /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				6AC0929024281B0C00FCA811 /* Notes */,
 				6AC0928F24281B0000FCA811 /* Auth */,
 				6A7A5DF72424E9B10094AC15 /* TextView.swift */,
+				6A1B8B94244DE57D00342FD2 /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -137,7 +140,7 @@
 		6A5D6567242948A00010E3CB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				6AC092932428BC9600FCA811 /* Logger.swift */,
+				6AC092932428BC9600FCA811 /* UserManager.swift */,
 				6AC0928724279F8F00FCA811 /* NoteManager.swift */,
 			);
 			path = Services;
@@ -334,11 +337,12 @@
 				6A7A5DF62424D9430094AC15 /* Note.swift in Sources */,
 				6A2EF43C2426A13800CBBD75 /* FacebookLoginButton.swift in Sources */,
 				6AC0928E242817E600FCA811 /* AuthView.swift in Sources */,
-				6AC092942428BC9600FCA811 /* Logger.swift in Sources */,
+				6AC092942428BC9600FCA811 /* UserManager.swift in Sources */,
 				6A31AAD0244B23B300BDB6A9 /* Notes.xcdatamodeld in Sources */,
 				6AC0929224281B2600FCA811 /* AddNewNoteView.swift in Sources */,
 				6AC0928824279F8F00FCA811 /* NoteManager.swift in Sources */,
 				6A7A5DF82424E9B10094AC15 /* TextView.swift in Sources */,
+				6A1B8B95244DE57D00342FD2 /* ImagePicker.swift in Sources */,
 				6ADE218B24296F0E00177978 /* ProfileView.swift in Sources */,
 				6A7A5DFB2425068C0094AC15 /* Date+Extension.swift in Sources */,
 			);
