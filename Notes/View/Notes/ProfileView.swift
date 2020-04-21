@@ -96,7 +96,6 @@ struct ProfileView: View {
                     .overlay(Circle().stroke(Color.white, lineWidth: 2))
                     .shadow(radius: 10)
                     .onTapGesture {
-                        print("heheheheh")
                         self.showingImagePicker = true
                     }
 

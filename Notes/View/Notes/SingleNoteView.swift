@@ -37,7 +37,6 @@ struct SingleNoteView: View {
         }
         .navigationBarTitle("Note")
         .onDisappear {
-            print("Back clicked")
             self.note.text = self.text
             self.note.title = self.title
             self.note.isFavorite = self.isFavorite

@@ -127,7 +127,6 @@ struct NotesListView: View {
     }
 
     func move(from offset: IndexSet, to index: Int) {
-        print(selectorIndex)
         switch selectorIndex {
         case 0:
             noteManager.notes.move(fromOffsets: offset, toOffset: index)

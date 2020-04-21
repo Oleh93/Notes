@@ -16,7 +16,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        print("1234567890")
         let contentView = NotesListView(noteManager: NoteManager()).environment(\.managedObjectContext, context)
         
         if let windowScene = scene as? UIWindowScene {
